@@ -48,24 +48,22 @@ export default function App() {
             <motion.div
               key="start-screen"
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="absolute inset-0 z-50 bg-white flex flex-col items-center"
+              className="absolute inset-0 z-50 bg-white flex flex-col items-center justify-center gap-2 px-4"
             >
-              {/* Full screen poster image */}
-              <div className="w-full flex-1 min-h-0 relative bg-white flex items-center justify-center p-2">
+              {/* Poster image - sized to fit */}
+              <div className="w-full max-h-[70dvh] flex items-center justify-center">
                 <img
                   src={undPoster}
                   alt="Scope Or Nope Poster"
-                  className="w-full h-full object-contain"
+                  className="max-w-full max-h-full object-contain"
                 />
               </div>
 
-              {/* Bottom Button Area - tight to image */}
-              <div className="w-full px-4 py-2 bg-white shrink-0">
-                <button onClick={() => startGame(1)} className="w-full bg-[#009A44] text-white font-black py-4 rounded-xl text-xl shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all flex items-center justify-center gap-2">
-                  <span>START SHIFT</span>
-                  <ChevronRight strokeWidth={4} size={20} />
-                </button>
-              </div>
+              {/* Bottom Button - right below image */}
+              <button onClick={() => startGame(1)} className="w-full bg-[#009A44] text-white font-black py-4 rounded-xl text-xl shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                <span>START SHIFT</span>
+                <ChevronRight strokeWidth={4} size={20} />
+              </button>
 
             </motion.div>
           )}
