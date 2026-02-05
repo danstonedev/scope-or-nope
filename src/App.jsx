@@ -48,10 +48,10 @@ export default function App() {
             <motion.div
               key="start-screen"
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="absolute inset-0 z-50 bg-white flex flex-col items-center justify-center gap-2 px-4"
+              className="absolute inset-0 z-50 bg-white flex flex-col items-center pt-2 px-4"
             >
-              {/* Poster image - sized to fit with room for browser nav */}
-              <div className="w-full max-h-[55dvh] flex items-center justify-center">
+              {/* Home Screen Image - At the top */}
+              <div className="w-full max-h-[60dvh] flex items-center justify-center mb-4">
                 <img
                   src={undPoster}
                   alt="Scope Or Nope Poster"
@@ -59,8 +59,11 @@ export default function App() {
                 />
               </div>
 
-              {/* Bottom Button - right below image */}
-              <button onClick={() => startGame(1)} className="w-full bg-[#009A44] text-white font-black py-4 rounded-xl text-xl shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all flex items-center justify-center gap-2">
+              {/* Start Button - Right below image */}
+              <button
+                onClick={() => startGame(1)}
+                className="w-full bg-[#009A44] text-white font-black py-4 rounded-xl text-xl shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all flex items-center justify-center gap-2 mb-8"
+              >
                 <span>START SHIFT</span>
                 <ChevronRight strokeWidth={4} size={20} />
               </button>
@@ -76,43 +79,42 @@ export default function App() {
                 animate={{ x: 0, opacity: 1, rotate: 0 }}
                 exit={{ x: -300, opacity: 0 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className="absolute inset-0 flex items-start justify-center pointer-events-none pt-4"
+                className="w-full flex flex-col items-center pt-2"
               >
-                <div className="relative w-full h-full flex items-start justify-center pointer-events-auto">
-                  <SwipeCard
-                    data={currentCard}
-                    onSwipe={handleAction}
-                    onSortingComplete={handleSortingComplete}
-                  />
-                </div>
+                <SwipeCard
+                  data={currentCard}
+                  onSwipe={handleAction}
+                  onSortingComplete={handleSortingComplete}
+                />
+
+                {/* 2-Option Button Bar - Directly under the card */}
+                {!scaffoldStage && (!currentCard.sorting_items || currentCard.sorting_items.length === 0) && (
+                  <div className="w-full max-w-md mt-4 flex flex-col gap-2">
+                    {/* Progress Indicator */}
+                    <div className="mx-auto bg-black/40 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold pointer-events-none">
+                      Case {totalCards - (queue?.length || 0)} of {totalCards}
+                    </div>
+
+                    <div className="flex justify-between items-center gap-2 bg-white/95 backdrop-blur-md p-1.5 rounded-xl border border-gray-200 shadow-lg mb-8">
+                      <button
+                        onClick={() => handleAction('left')}
+                        className="flex-1 bg-green-50 hover:bg-green-100 active:scale-95 transition-all text-green-600 rounded-lg py-3 flex items-center justify-center gap-2 group"
+                      >
+                        <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+                        <span className="text-xs font-black uppercase tracking-wider">Treat</span>
+                      </button>
+
+                      <button
+                        onClick={() => handleAction('right')}
+                        className="flex-1 bg-red-50 hover:bg-red-100 active:scale-95 transition-all text-red-600 rounded-lg py-3 flex items-center justify-center gap-2 group"
+                      >
+                        <span className="text-xs font-black uppercase tracking-wider">Refer</span>
+                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
+                  </div>
+                )}
               </motion.div>
-
-              {/* 2-Option Bottom Bar (Only for non-sorting cards without scaffold) */}
-              {!scaffoldStage && (!currentCard.sorting_items || currentCard.sorting_items.length === 0) && (
-                <div className="absolute inset-x-0 bottom-2 px-3 z-20 flex flex-col gap-1">
-                  {/* Progress Indicator */}
-                  <div className="mx-auto bg-black/40 backdrop-blur-md text-white px-2 py-0.5 rounded-full text-[9px] font-bold pointer-events-none">
-                    Case {totalCards - (queue?.length || 0)} of {totalCards}
-                  </div>
-                  <div className="flex justify-between items-center gap-2 bg-white/95 backdrop-blur-md p-1.5 rounded-xl border border-gray-200 shadow-lg">
-                    <button
-                      onClick={() => handleAction('left')}
-                      className="flex-1 bg-green-50 hover:bg-green-100 active:scale-95 transition-all text-green-600 rounded-lg py-2 flex items-center justify-center gap-2 group"
-                    >
-                      <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                      <span className="text-xs font-black uppercase tracking-wider">Treat</span>
-                    </button>
-
-                    <button
-                      onClick={() => handleAction('right')}
-                      className="flex-1 bg-red-50 hover:bg-red-100 active:scale-95 transition-all text-red-600 rounded-lg py-2 flex items-center justify-center gap-2 group"
-                    >
-                      <span className="text-xs font-black uppercase tracking-wider">Refer</span>
-                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
-                </div>
-              )}
 
 
               {/* SCAFFOLDING MODAL (Parent-Controlled) */}
