@@ -239,12 +239,12 @@ export default function SwipeCard({ data, onSwipe, onSortingComplete }) {
             </div>
 
             {/* OPENING QUESTION */}
-            <div className="px-6 pt-2 pb-8 mt-auto">
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-5 rounded-2xl rounded-tl-none border border-blue-100 shadow-sm relative ml-2">
-                    <div className="absolute -top-3 -left-2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md transform -rotate-2">
+            <div className="px-4 pt-1 pb-4 mt-auto">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-3 rounded-xl rounded-tl-none border border-blue-100 shadow-sm relative ml-2">
+                    <div className="absolute -top-2.5 -left-1 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md transform -rotate-2">
                         ASKING YOU
                     </div>
-                    <p className="text-blue-900 font-bold text-xl leading-snug mt-1">
+                    <p className="text-blue-900 font-bold text-base leading-snug mt-0.5">
                         "{data.level1_question}"
                     </p>
                 </div>
