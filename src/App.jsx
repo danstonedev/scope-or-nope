@@ -91,26 +91,26 @@ export default function App() {
 
               {/* 2-Option Bottom Bar (Only for non-sorting cards without scaffold) */}
               {!scaffoldStage && (!currentCard.sorting_items || currentCard.sorting_items.length === 0) && (
-                <div className="absolute inset-x-0 bottom-4 px-4 pb-2 z-20 flex flex-col gap-2">
+                <div className="absolute inset-x-0 bottom-2 px-3 z-20 flex flex-col gap-1">
                   {/* Progress Indicator */}
-                  <div className="mx-auto bg-black/40 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold pointer-events-none">
+                  <div className="mx-auto bg-black/40 backdrop-blur-md text-white px-2 py-0.5 rounded-full text-[9px] font-bold pointer-events-none">
                     Case {totalCards - (queue?.length || 0)} of {totalCards}
                   </div>
-                  <div className="flex justify-between items-center gap-3 bg-white/90 backdrop-blur-md p-2 rounded-2xl border border-gray-200 shadow-xl">
+                  <div className="flex justify-between items-center gap-2 bg-white/95 backdrop-blur-md p-1.5 rounded-xl border border-gray-200 shadow-lg">
                     <button
                       onClick={() => handleAction('left')}
-                      className="flex-1 bg-green-50 hover:bg-green-100 active:scale-95 transition-all text-green-600 rounded-xl py-4 flex flex-col items-center gap-1 group"
+                      className="flex-1 bg-green-50 hover:bg-green-100 active:scale-95 transition-all text-green-600 rounded-lg py-2 flex items-center justify-center gap-2 group"
                     >
-                      <ArrowLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
+                      <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
                       <span className="text-xs font-black uppercase tracking-wider">Treat</span>
                     </button>
 
                     <button
                       onClick={() => handleAction('right')}
-                      className="flex-1 bg-red-50 hover:bg-red-100 active:scale-95 transition-all text-red-600 rounded-xl py-4 flex flex-col items-center gap-1 group"
+                      className="flex-1 bg-red-50 hover:bg-red-100 active:scale-95 transition-all text-red-600 rounded-lg py-2 flex items-center justify-center gap-2 group"
                     >
-                      <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
                       <span className="text-xs font-black uppercase tracking-wider">Refer</span>
+                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>
