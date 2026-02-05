@@ -150,7 +150,7 @@ export default function SwipeCard({ data, onSwipe, onSortingComplete }) {
             dragElastic={0.8}
             onDragEnd={handleDragEnd}
             style={{ x, y, rotate, touchAction: "none" }}
-            className="absolute w-[95%] max-w-md h-[75vh] max-h-[700px] bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 flex flex-col justify-between"
+            className="absolute w-[95%] max-w-md h-[70dvh] max-h-[600px] bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 flex flex-col justify-between"
         >
             {/* SWIPE INDICATORS (Only show for non-sorting cards) */}
             {!hasSorting && (
@@ -181,39 +181,38 @@ export default function SwipeCard({ data, onSwipe, onSortingComplete }) {
                     </div>
                 </div>
 
-                <div className="flex items-end gap-4">
-                    {/* AVATAR */}
-                    <div className="w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl font-black text-gray-800 shrink-0 border-4 border-white/20">
+                <div className="flex items-center gap-3">
+                    {/* COMPACT AVATAR */}
+                    <div className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-sm font-black text-gray-800 shrink-0 border-2 border-white/30">
                         {data.dating_profile.username.slice(0, 2).toUpperCase()}
                     </div>
-
-                    <div className="pb-1">
-                        <h2 className="text-2xl font-black leading-tight drop-shadow-sm">{data.dating_profile.username}</h2>
-                        <div className="flex items-center gap-2 text-white/90 text-xs font-bold">
+                    <div>
+                        <h2 className="text-lg font-bold leading-tight drop-shadow-sm">{data.dating_profile.username}</h2>
+                        <div className="flex items-center gap-1.5 text-white/80 text-[10px] font-semibold">
                             <span>{data.dating_profile.age}</span> • <span>{data.dating_profile.sex}</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="flex-grow flex flex-col justify-evenly gap-4 py-4">
-                {/* LOOKING FOR */}
-                <div className="px-6 py-2">
-                    <div className="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-wider mb-1.5">
-                        <Activity size={14} /> Looking For
+            <div className="flex-grow flex flex-col justify-evenly gap-3 py-3">
+                {/* BIO - NOW FIRST AND PROMINENT */}
+                <div className="px-5 py-3 mx-4 bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl border border-gray-100">
+                    <div className="flex items-center gap-2 text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-1">
+                        <User size={12} /> About Me
                     </div>
-                    <p className="text-purple-600 font-bold text-base leading-snug">
-                        {data.dating_profile.looking_for}
+                    <p className="text-gray-800 text-base leading-relaxed font-semibold">
+                        {data.dating_profile.bio}
                     </p>
                 </div>
 
-                {/* BIO */}
-                <div className="px-6 py-2">
-                    <div className="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-wider mb-1.5">
-                        <User size={14} /> About Me
+                {/* LOOKING FOR - NOW SECOND */}
+                <div className="px-6 py-1">
+                    <div className="flex items-center gap-2 text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">
+                        <Activity size={12} /> Looking For
                     </div>
-                    <p className="text-gray-600 text-[15px] leading-relaxed font-medium">
-                        {data.dating_profile.bio}
+                    <p className="text-purple-600 font-bold text-sm leading-snug">
+                        {data.dating_profile.looking_for}
                     </p>
                 </div>
 
