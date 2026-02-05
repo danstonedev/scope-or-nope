@@ -50,8 +50,8 @@ export default function App() {
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               className="absolute inset-0 z-50 bg-white flex flex-col items-center justify-center gap-2 px-4"
             >
-              {/* Poster image - sized to fit */}
-              <div className="w-full max-h-[70dvh] flex items-center justify-center">
+              {/* Poster image - sized to fit with room for browser nav */}
+              <div className="w-full max-h-[55dvh] flex items-center justify-center">
                 <img
                   src={undPoster}
                   alt="Scope Or Nope Poster"
