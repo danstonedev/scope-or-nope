@@ -150,7 +150,7 @@ export default function SwipeCard({ data, onSwipe, onSortingComplete }) {
             dragElastic={0.8}
             onDragEnd={handleDragEnd}
             style={{ x, y, rotate, touchAction: "none" }}
-            className="absolute w-[95%] max-w-md h-[70dvh] max-h-[600px] bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 flex flex-col justify-between"
+            className="absolute w-[95%] max-w-md bg-white rounded-3xl shadow-xl border border-gray-100 flex flex-col"
         >
             {/* SWIPE INDICATORS (Only show for non-sorting cards) */}
             {!hasSorting && (
