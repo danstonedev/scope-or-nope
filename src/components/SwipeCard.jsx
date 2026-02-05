@@ -196,7 +196,7 @@ export default function SwipeCard({ data, onSwipe, onSortingComplete }) {
                 </div>
             </div>
 
-            <div className="flex-grow flex flex-col justify-evenly gap-4 py-4 overflow-y-auto custom-scrollbar">
+            <div className="flex-grow flex flex-col justify-evenly gap-4 py-4">
                 {/* LOOKING FOR */}
                 <div className="px-6 py-2">
                     <div className="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-wider mb-1.5">
