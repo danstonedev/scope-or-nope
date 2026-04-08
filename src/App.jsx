@@ -4,12 +4,13 @@ import SwipeCard from './components/SwipeCard';
 import ScaffoldModal from './components/ScaffoldModal';
 import { Heart, X, Trophy, ChevronRight, RotateCcw, ArrowLeft, ArrowRight, AlertCircle, Check } from 'lucide-react';
 import { useGameLogic, GLOBAL_FEEDBACK } from './hooks/useGameLogic';
+import { GAME_MODES } from './data/caseBank';
 import undPoster from './assets/und_poster.png';
 
 export default function App() {
   const {
     // State
-    queue, currentCard, score, gameState, feedback, streak, level,
+    queue, currentCard, score, gameState, feedback, streak, level, gameMode,
     showExitConfirm, showJuicyOverlay, highScore,
     scaffoldStage, chatMessages, chatNotification,
     // Handlers
@@ -51,7 +52,7 @@ export default function App() {
               className="absolute inset-0 z-50 bg-white flex flex-col items-center pt-2 px-4"
             >
               {/* Home Screen Image - At the top */}
-              <div className="w-full max-h-[60dvh] flex items-center justify-center mb-4">
+              <div className="w-full max-h-[40dvh] flex items-center justify-center mb-4">
                 <img
                   src={undPoster}
                   alt="Scope Or Nope Poster"
@@ -59,14 +60,24 @@ export default function App() {
                 />
               </div>
 
-              {/* Start Button - Right below image */}
-              <button
-                onClick={() => startGame(1)}
-                className="w-full bg-[#009A44] text-white font-black py-4 rounded-xl text-xl shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all flex items-center justify-center gap-2 mb-8"
-              >
-                <span>START SHIFT</span>
-                <ChevronRight strokeWidth={4} size={20} />
-              </button>
+              {/* Mode Selection */}
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Choose Your Focus</p>
+              <div className="w-full flex flex-col gap-2 mb-4">
+                {GAME_MODES.map((mode) => (
+                  <button
+                    key={mode.id}
+                    onClick={() => startGame(1, mode.id)}
+                    className="w-full bg-white border-2 border-gray-200 hover:border-[#009A44] hover:bg-green-50 text-left font-bold py-3 px-4 rounded-xl shadow-sm hover:shadow-md transition-all flex items-center gap-3 group"
+                  >
+                    <span className="text-2xl">{mode.icon}</span>
+                    <div className="flex-1">
+                      <span className="text-sm font-black text-gray-900 group-hover:text-[#009A44] transition-colors">{mode.name}</span>
+                      <p className="text-[10px] text-gray-500 font-medium leading-tight mt-0.5">{mode.description}</p>
+                    </div>
+                    <ChevronRight size={18} className="text-gray-300 group-hover:text-[#009A44] group-hover:translate-x-1 transition-all" />
+                  </button>
+                ))}
+              </div>
 
             </motion.div>
           )}

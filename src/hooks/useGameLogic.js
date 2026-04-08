@@ -20,6 +20,7 @@ export function useGameLogic() {
     const [feedback, setFeedback] = useState(null);
     const [streak, setStreak] = useState(0);
     const [level, setLevel] = useState(1);
+    const [gameMode, setGameMode] = useState(null);
     const [showExitConfirm, setShowExitConfirm] = useState(false);
     const [showJuicyOverlay, setShowJuicyOverlay] = useState(null);
     const [highScore, setHighScore] = useState(0);
@@ -153,14 +154,17 @@ export function useGameLogic() {
         }
     };
 
-    const startGame = (selectedLevel) => {
+    const startGame = (selectedLevel, mode = 'nutrition') => {
         setLevel(selectedLevel);
+        setGameMode(mode);
 
-        let bank = CASE_BANK;
-        if (selectedLevel > 1) {
-            bank = CASE_BANK.filter(c => c.scaffolding);
-        }
+        let bank = CASE_BANK.filter(c => c.category === mode);
         if (bank.length === 0) bank = CASE_BANK;
+
+        if (selectedLevel > 1) {
+            const scaffolded = bank.filter(c => c.scaffolding);
+            if (scaffolded.length > 0) bank = scaffolded;
+        }
 
         const shuffled = [...bank].sort(() => Math.random() - 0.5);
         setQueue(shuffled);
@@ -184,6 +188,7 @@ export function useGameLogic() {
     const goHome = () => {
         setShowExitConfirm(false);
         setGameState('start');
+        setGameMode(null);
         setScaffoldStage(null);
         setFeedback(null);
         setChatMessages([]);
@@ -309,7 +314,7 @@ export function useGameLogic() {
 
     return {
         // State
-        queue, currentCard, score, gameState, feedback, streak, level,
+        queue, currentCard, score, gameState, feedback, streak, level, gameMode,
         showExitConfirm, showJuicyOverlay, highScore,
         scaffoldStage, chatMessages, chatNotification,
         // Handlers

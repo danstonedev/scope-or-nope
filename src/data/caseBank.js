@@ -1,7 +1,7 @@
 
 export const CASE_BANK = [
   {
-    id: "NUTR-001", difficulty: 1, setting: "Outpatient",
+    id: "NUTR-001", category: "nutrition", difficulty: 1, setting: "Outpatient",
     bg_gradient: "linear-gradient(135deg, #a5f3fc, #3b82f6)",
     dating_profile: {
       username: "Brenda_Knees58",
@@ -43,7 +43,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-002", difficulty: 1, setting: "Outpatient",
+    id: "NUTR-002", category: "nutrition", difficulty: 1, setting: "Outpatient",
     bg_gradient: "linear-gradient(135deg, #6ee7b7, #059669)",
     dating_profile: {
       username: "GymBro_ACL",
@@ -84,7 +84,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-003", difficulty: 2, setting: "Outpatient",
+    id: "NUTR-003", category: "nutrition", difficulty: 2, setting: "Outpatient",
     bg_gradient: "linear-gradient(135deg, #ddd6fe, #8b5cf6)",
     dating_profile: {
       username: "HeartHealthy_Harold",
@@ -128,7 +128,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-004", difficulty: 4, setting: "Acute Care",
+    id: "NUTR-004", category: "nutrition", difficulty: 4, setting: "Acute Care",
     bg_gradient: "linear-gradient(135deg, #fbbf24, #d97706)",
     dating_profile: {
       username: "PostOp_Gary",
@@ -169,7 +169,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-005", difficulty: 5, setting: "Outpatient",
+    id: "NUTR-005", category: "nutrition", difficulty: 5, setting: "Outpatient",
     bg_gradient: "linear-gradient(135deg, #c4b5fd, #5b21b6)",
     dating_profile: {
       username: "Runner_Girl_24",
@@ -211,7 +211,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-006", difficulty: 2, setting: "Outpatient",
+    id: "NUTR-006", category: "nutrition", difficulty: 2, setting: "Outpatient",
     bg_gradient: "linear-gradient(135deg, #fcd34d, #f59e0b)",
     dating_profile: {
       username: "JointsJammed62",
@@ -252,7 +252,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-007", difficulty: 4, setting: "Home Health",
+    id: "NUTR-007", category: "nutrition", difficulty: 4, setting: "Home Health",
     bg_gradient: "linear-gradient(135deg, #60a5fa, #2563eb)",
     dating_profile: {
       username: "DizzyDoris",
@@ -293,7 +293,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-008", difficulty: 3, setting: "Outpatient",
+    id: "NUTR-008", category: "nutrition", difficulty: 3, setting: "Outpatient",
     bg_gradient: "linear-gradient(135deg, #f87171, #ef4444)",
     dating_profile: {
       username: "TechBro_Biohacker",
@@ -334,7 +334,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-009", difficulty: 5, setting: "Inpatient Rehab",
+    id: "NUTR-009", category: "nutrition", difficulty: 5, setting: "Inpatient Rehab",
     bg_gradient: "linear-gradient(135deg, #818cf8, #4f46e5)",
     dating_profile: {
       username: "Hospital_Hilda",
@@ -376,7 +376,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-010", difficulty: 3, setting: "Outpatient",
+    id: "NUTR-010", category: "nutrition", difficulty: 3, setting: "Outpatient",
     bg_gradient: "linear-gradient(135deg, #fca5a5, #dc2626)",
     dating_profile: {
       username: "Tomato_Fear",
@@ -417,7 +417,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-011", difficulty: 2, setting: "Outpatient",
+    id: "NUTR-011", category: "nutrition", difficulty: 2, setting: "Outpatient",
     bg_gradient: "linear-gradient(135deg, #e9d5ff, #9333ea)",
     dating_profile: {
       username: "Bone_Density_Betty",
@@ -458,7 +458,7 @@ export const CASE_BANK = [
     }
   },
   {
-    id: "NUTR-012", difficulty: 3, setting: "Home Health",
+    id: "NUTR-012", category: "nutrition", difficulty: 3, setting: "Home Health",
     bg_gradient: "linear-gradient(135deg, #cbd5e1, #475569)",
     dating_profile: {
       username: "NoAppetite_Arthur",
@@ -497,17 +497,439 @@ export const CASE_BANK = [
         ]
       }
     }
+  },
+
+  // ============================================
+  // DIRECT ACCESS / PRIMARY CARE CASES
+  // ============================================
+  {
+    id: "DA-001", category: "direct_access", difficulty: 1, setting: "Outpatient",
+    bg_gradient: "linear-gradient(135deg, #c4b5fd, #7c3aed)",
+    dating_profile: {
+      username: "RunnerKnee_Mike34",
+      age: 34, sex: "M",
+      tagline: "Just wanna run again 🏃",
+      bio: "Knee started hurting 2 weeks ago after ramping up my marathon training. No trauma, no locking, no giving way.",
+      looking_for: "Get back to running ASAP",
+      baggage: ["Anterior knee pain", "No meds"],
+      icf_tags: ["b28016 Pain in joints", "d4552 Running", "b710 Mobility of joint functions"]
+    },
+    level1_question: "Do I really need to see my doctor first, or can you just fix my knee?",
+    correct_swipe: "RIGHT_PT",
+    reveal: {
+      best_answer_rationale: "Atraumatic anterior knee pain in a young active adult with no red flags is classic musculoskeletal. Direct access allows PTs to evaluate and treat without physician referral in most states.",
+      key_red_flags: ["None"],
+      scope_boundary: "Appropriate Direct Access"
+    },
+    scaffolding: {
+      level2: {
+        question: "My buddy tore his ACL running though. How do you know mine isn't torn? 🤔",
+        options: [
+          { text: "I can't know. You should get an MRI first.", correct: false, feedback: "PTs are trained in differential diagnosis. Clinical tests like Lachman's and Pivot Shift can rule this in/out without imaging." },
+          { text: "ACL tears don't happen from running—you're fine.", correct: false, feedback: "While rare from running alone, dismissing patient concerns isn't best practice." },
+          { text: "Great question. Let me do some specific ligament tests on your knee right now to rule that out.", correct: true, feedback: "Perfect. You demonstrated clinical reasoning and reassured the patient with evidence-based examination." },
+          { text: "If it was torn, you'd know. It's really painful.", correct: false, feedback: "Not always true. Some ACL tears present with minimal pain. Clinical testing is the answer." }
+        ]
+      },
+      level3: {
+        update: "Okay, tests were negative. But now I'm getting some sharp pain going DOWN stairs. Worse than before. 😬",
+        time_label: "2 Weeks Later",
+        options: [
+          { text: "That's patellofemoral syndrome. Let's add quad strengthening and modify your training load.", correct: true, feedback: "Spot on. Worsening with stairs + negative ligament tests = classic PFP. Load management and strengthening are first-line." },
+          { text: "You need to stop running completely until this resolves.", correct: false, feedback: "Complete rest is rarely indicated for PFP and can actually delay recovery. Relative rest + graded loading is preferred." },
+          { text: "This is getting worse—I'm referring you to ortho.", correct: false, feedback: "Worsening stair pain alone doesn't warrant referral. This is within PT scope to manage conservatively." },
+          { text: "Try icing it after every run.", correct: false, feedback: "Ice alone doesn't address the biomechanical cause. He needs structured rehab." }
+        ]
+      }
+    }
+  },
+  {
+    id: "DA-002", category: "direct_access", difficulty: 1, setting: "Outpatient",
+    bg_gradient: "linear-gradient(135deg, #fde68a, #f59e0b)",
+    dating_profile: {
+      username: "DeskNeck_Sarah",
+      age: 42, sex: "F",
+      tagline: "My neck is killing me 💻",
+      bio: "Work from home, 10+ hours at the computer daily. Neck has been stiff and achy for 3 weeks. No numbness, no headaches.",
+      looking_for: "Pain relief & ergonomic help",
+      baggage: ["Cervical stiffness", "Sedentary job"],
+      icf_tags: ["b28010 Pain in head and neck", "b710 Mobility of joint functions", "d845 Acquiring, keeping and terminating a job"]
+    },
+    level1_question: "I didn't get a referral from my doctor. Can you still see me?",
+    correct_swipe: "RIGHT_PT",
+    reveal: {
+      best_answer_rationale: "Mechanical neck pain from postural strain with no neurological symptoms is a textbook direct access case. PTs can evaluate and treat without referral.",
+      key_red_flags: ["None"],
+      scope_boundary: "Appropriate Direct Access"
+    },
+    scaffolding: {
+      level2: {
+        question: "My coworker said neck pain can be a sign of meningitis. Should I be worried? 😰",
+        options: [
+          { text: "No, meningitis is really rare. Don't worry about it.", correct: false, feedback: "While rare, dismissing concerns without screening isn't appropriate. Ask about fever, photophobia, and rash." },
+          { text: "Let me ask you a few screening questions—any fever, sensitivity to light, or rash recently?", correct: true, feedback: "Excellent clinical reasoning. Screening for red flags before reassuring is best practice in direct access." },
+          { text: "You should go to the ER to rule that out.", correct: false, feedback: "Without any red flags present, sending to ER is an overreaction. Screen first, then decide." },
+          { text: "Meningitis causes a stiff neck, not a sore neck. Totally different.", correct: false, feedback: "While there is a difference, this is oversimplified and could miss a serious condition. Always screen." }
+        ]
+      },
+      level3: {
+        update: "Headaches have started this week. They wrap around from the back of my head to my forehead. 🤕",
+        time_label: "1 Week Later",
+        options: [
+          { text: "That pattern is cervicogenic headache. Let's treat the upper cervical spine and adjust your workstation.", correct: true, feedback: "Classic cervicogenic headache pattern (occipital → frontal). Manual therapy to C1-2 + ergonomic correction is evidence-based." },
+          { text: "Headaches are outside PT scope. I'm referring you to neurology.", correct: false, feedback: "Cervicogenic headaches are absolutely within PT scope. The referral pattern clearly points to cervical origin." },
+          { text: "Take some ibuprofen before our sessions.", correct: false, feedback: "Masking symptoms with medication doesn't address the cause and isn't PT's role to recommend dosing." },
+          { text: "We need to get a CT scan of your head.", correct: false, feedback: "The headache pattern is consistent with cervical origin, not intracranial pathology. Imaging isn't indicated here." }
+        ]
+      }
+    }
+  },
+  {
+    id: "DA-003", category: "direct_access", difficulty: 2, setting: "Outpatient",
+    bg_gradient: "linear-gradient(135deg, #fca5a5, #ef4444)",
+    dating_profile: {
+      username: "ChestPain_Tom55",
+      age: 55, sex: "M",
+      tagline: "Something doesn't feel right 😟",
+      bio: "Walked in saying he has 'chest tightness' that started this morning. Also feels short of breath. Hasn't seen a doctor.",
+      looking_for: "Figured PT could check it out",
+      baggage: ["HTN", "Smoker (30yrs)", "Metoprolol"],
+      icf_tags: ["b4150 Functions of arteries", "b440 Respiration functions", "b455 Exercise tolerance functions"]
+    },
+    level1_question: "I've got this tightness in my chest since this morning. Can you take a look?",
+    correct_swipe: "LEFT_REFER",
+    reveal: {
+      best_answer_rationale: "New-onset chest tightness with SOB in a 55yo male smoker with HTN is a cardiovascular red flag. This patient needs emergency medical screening, NOT physical therapy. Direct access requires recognizing when NOT to treat.",
+      key_red_flags: ["New chest tightness", "SOB", "HTN", "Smoking history", "Age > 50"],
+      scope_boundary: "Medical Emergency Screening"
+    },
+    scaffolding: {
+      level2: {
+        question: "C'mon, I probably just pulled something. Can't you just work on it? 💪",
+        options: [
+          { text: "You're right, it's probably muscular. Let me take a look.", correct: false, feedback: "DANGEROUS. With his risk factors (age, HTN, smoking), assuming musculoskeletal origin could be fatal." },
+          { text: "I understand, but your symptoms combined with your health history mean we need to rule out something more serious first. I'm calling 911.", correct: true, feedback: "Correct. Patient safety always comes first. Direct access means knowing when to NOT be the provider." },
+          { text: "Let me check your blood pressure and heart rate first.", correct: false, feedback: "While vitals are useful, this is delaying action on a potential cardiac emergency. Call 911 first." },
+          { text: "I'll refer you back to your PCP for a checkup.", correct: false, feedback: "Too slow. A PCP visit next week doesn't address a potential MI happening NOW." }
+        ]
+      },
+      level3: {
+        update: "His tightness seems to be radiating to his left arm now. He's sweating. 🚨",
+        time_label: "5 Minutes Later",
+        options: [
+          { text: "Call 911 immediately. Have him sit down, loosen clothing, and stay with him until EMS arrives.", correct: true, feedback: "Textbook response. Left arm radiation + diaphoresis = classic MI presentation. You're saving a life." },
+          { text: "Give him aspirin and drive him to the hospital yourself.", correct: false, feedback: "While aspirin is appropriate first aid, driving him yourself delays advanced cardiac care. EMS can start treatment en route." },
+          { text: "Help him lie down on the treatment table and monitor his symptoms.", correct: false, feedback: "Lying flat can worsen cardiac symptoms. Sitting upright is preferred. And monitoring isn't enough—he needs EMS." },
+          { text: "Check if anyone in the clinic has nitroglycerin.", correct: false, feedback: "PT clinics don't stock cardiac meds, and administering prescription medication isn't in PT scope. Call 911." }
+        ]
+      }
+    }
+  },
+  {
+    id: "DA-004", category: "direct_access", difficulty: 2, setting: "Outpatient",
+    bg_gradient: "linear-gradient(135deg, #a7f3d0, #10b981)",
+    dating_profile: {
+      username: "BackPain_Linda48",
+      age: 48, sex: "F",
+      tagline: "Threw out my back AGAIN 😤",
+      bio: "Recurrent low back pain flare-ups. Last episode was 6 months ago. Bending to pick up groceries triggered it yesterday. No leg symptoms.",
+      looking_for: "Quick fix for my back",
+      baggage: ["Recurrent LBP", "No imaging", "Ibuprofen PRN"],
+      icf_tags: ["b28013 Pain in back", "b710 Mobility of joint functions", "d430 Lifting and carrying objects"]
+    },
+    level1_question: "My back went out again. I just came straight here—should I have gone to my doctor first?",
+    correct_swipe: "RIGHT_PT",
+    reveal: {
+      best_answer_rationale: "Recurrent mechanical low back pain without radiculopathy or red flags is ideal for direct access PT. Evidence strongly supports PT as first-line care for LBP, reducing imaging and opioid use.",
+      key_red_flags: ["None"],
+      scope_boundary: "Appropriate Direct Access"
+    },
+    scaffolding: {
+      level2: {
+        question: "Don't I need an X-ray or MRI first? My friend said I probably have a herniated disc. 🩻",
+        options: [
+          { text: "Imaging isn't recommended for non-specific LBP without red flags. Let me examine you and we'll know more.", correct: true, feedback: "Evidence-based. Clinical practice guidelines advise against routine imaging for acute LBP without red flags." },
+          { text: "You should get an MRI to be safe.", correct: false, feedback: "Unnecessary imaging leads to incidental findings, anxiety, and often more invasive (and unnecessary) treatment." },
+          { text: "An X-ray would be helpful to see what's going on.", correct: false, feedback: "X-rays don't show disc herniations and expose patients to radiation unnecessarily. Clinical exam first." },
+          { text: "Your friend might be right. Let me refer you for imaging.", correct: false, feedback: "Validating an unqualified diagnosis and ordering unnecessary imaging goes against best practice." }
+        ]
+      },
+      level3: {
+        update: "It's better, but now I'm getting some tingling down my left leg to my foot. First time that's happened. 😨",
+        time_label: "1 Week Later",
+        options: [
+          { text: "New radiculopathy changes things. Let me do a neurological screen. If reflexes or strength are affected, we may need imaging now.", correct: true, feedback: "Exactly right. New neuro symptoms warrant further workup. You adapted your plan based on changing presentation." },
+          { text: "That's normal with back pain. Keep doing your exercises.", correct: false, feedback: "New radicular symptoms are NOT 'normal.' This could indicate nerve root compression requiring different management." },
+          { text: "We need to stop all treatment and get you to a spine surgeon.", correct: false, feedback: "Jumping to surgery consultation skips the diagnostic workup. Neurological screening first, then decide." },
+          { text: "It's probably just sciatica. Stretch your piriformis.", correct: false, feedback: "Oversimplification. New leg tingling with LBP needs proper neurological examination, not a generic stretch." }
+        ]
+      }
+    }
+  },
+  {
+    id: "DA-005", category: "direct_access", difficulty: 3, setting: "Outpatient",
+    bg_gradient: "linear-gradient(135deg, #fdba74, #ea580c)",
+    dating_profile: {
+      username: "ShoulderGuy_Ray62",
+      age: 62, sex: "M",
+      tagline: "Can't reach the top shelf anymore 🤷",
+      bio: "Gradual onset right shoulder pain over 3 months. Worse overhead. Also noticed unexplained 10lb weight loss in the past month.",
+      looking_for: "Get my shoulder moving again",
+      baggage: ["R shoulder pain", "Weight loss (unexplained)", "No meds"],
+      icf_tags: ["b28014 Pain in upper limb", "b710 Mobility of joint functions", "b530 Weight maintenance functions"]
+    },
+    level1_question: "My shoulder has been bugging me for months. I figure PT is the right move?",
+    correct_swipe: "LEFT_REFER",
+    reveal: {
+      best_answer_rationale: "While the shoulder pain alone could be direct access appropriate, unexplained weight loss is a systemic red flag. This patient needs medical screening for potential malignancy or other systemic disease before PT intervention.",
+      key_red_flags: ["Unexplained weight loss (10lb/1month)", "Age > 50", "Insidious onset"],
+      scope_boundary: "Red Flag Screening"
+    },
+    scaffolding: {
+      level2: {
+        question: "I'm sure the weight loss is just stress. Can we focus on the shoulder? 🙏",
+        options: [
+          { text: "Sure, let's focus on what brought you in.", correct: false, feedback: "Never ignore a systemic red flag because the patient minimizes it. Unexplained weight loss + insidious pain = screen first." },
+          { text: "I hear you, but 10 pounds in a month without trying is something your doctor needs to check. I'd feel better treating your shoulder after we rule out other causes.", correct: true, feedback: "Professional, empathetic, and safe. You validated his concern while prioritizing the red flag." },
+          { text: "Weight loss is outside my scope. Not my problem.", correct: false, feedback: "Red flag screening IS your scope in direct access. Recognizing systemic signs is essential." },
+          { text: "Let me check your shoulder today and if it doesn't improve we'll refer.", correct: false, feedback: "Delaying referral when red flags are present is dangerous. Screen first, then treat." }
+        ]
+      },
+      level3: {
+        update: "I went to my doctor. They found a mass on my lung. They're running more tests. Thanks for catching that. 😔",
+        time_label: "2 Weeks Later",
+        options: [
+          { text: "I'm glad we caught it. Once your medical team clears you, I'm here to help with your shoulder.", correct: true, feedback: "Compassionate and appropriate. You saved this man's life by recognizing a red flag. This is why screening matters." },
+          { text: "See? That's why I can't just treat shoulders without knowing the full picture.", correct: false, feedback: "While true, this comes across as self-congratulatory. Show empathy first." },
+          { text: "Let's start shoulder rehab anyway to keep you moving.", correct: false, feedback: "Without medical clearance and knowing the diagnosis, starting rehab could be contraindicated." },
+          { text: "You should have gone to the doctor sooner.", correct: false, feedback: "Blaming the patient is never appropriate. He came to you and you caught it—that's the system working." }
+        ]
+      }
+    }
+  },
+  {
+    id: "DA-006", category: "direct_access", difficulty: 1, setting: "Outpatient",
+    bg_gradient: "linear-gradient(135deg, #93c5fd, #2563eb)",
+    dating_profile: {
+      username: "AnkleTwist_Jess22",
+      age: 22, sex: "F",
+      tagline: "Rolled it at volleyball 🏐",
+      bio: "Lateral ankle sprain at rec league last night. Swollen, bruised, can bear weight but it hurts. No previous ankle injuries.",
+      looking_for: "Get back on the court fast",
+      baggage: ["Acute lateral ankle sprain", "No meds"],
+      icf_tags: ["b28015 Pain in lower limb", "b715 Stability of joint functions", "d9201 Sports"]
+    },
+    level1_question: "I rolled my ankle last night. Can I just come see you or do I need X-rays first?",
+    correct_swipe: "RIGHT_PT",
+    reveal: {
+      best_answer_rationale: "PTs can apply the Ottawa Ankle Rules to determine if imaging is needed. She's weight-bearing and the mechanism is typical for a lateral sprain. Direct access PT is appropriate here.",
+      key_red_flags: ["None"],
+      scope_boundary: "Appropriate Direct Access + Clinical Screening"
+    },
+    scaffolding: {
+      level2: {
+        question: "But what if it's broken? How would you even know without an X-ray? 🦴",
+        options: [
+          { text: "If it was broken you wouldn't be able to walk on it.", correct: false, feedback: "That's a common myth. Some fractures are weight-bearing. Use Ottawa Ankle Rules for proper screening." },
+          { text: "There are specific clinical tests called the Ottawa Ankle Rules that help us decide if you need an X-ray. Let me check.", correct: true, feedback: "Excellent. The Ottawa Ankle Rules have near 100% sensitivity for fractures and PTs are trained to apply them." },
+          { text: "You're right, let me send you for X-rays first.", correct: false, feedback: "Unnecessary if clinical screening is negative. This adds cost and delay for the patient." },
+          { text: "It's just a sprain. You don't need X-rays.", correct: false, feedback: "You can't determine that without a proper screening exam. Don't skip the clinical reasoning." }
+        ]
+      },
+      level3: {
+        update: "It's been 3 weeks. The swelling is gone but my ankle keeps 'giving out' when I try to run. 😩",
+        time_label: "3 Weeks Later",
+        options: [
+          { text: "That's functional instability. Let's progress to proprioception training and sport-specific agility work.", correct: true, feedback: "Correct management. Post-sprain functional instability responds to progressive balance and neuromuscular training." },
+          { text: "You might need a brace permanently.", correct: false, feedback: "Bracing is a short-term adjunct, not a long-term solution. Neuromuscular rehab is the evidence-based approach." },
+          { text: "Your ligament might be torn. Let me refer you for an MRI.", correct: false, feedback: "Functional instability after an ankle sprain is common and treatable with rehab. MRI isn't indicated for typical recovery." },
+          { text: "Just keep doing the ice and elevation.", correct: false, feedback: "At 3 weeks post-sprain, RICE is no longer the focus. She needs progressive loading and neuromuscular training." }
+        ]
+      }
+    }
+  },
+  {
+    id: "DA-007", category: "direct_access", difficulty: 4, setting: "Outpatient",
+    bg_gradient: "linear-gradient(135deg, #d8b4fe, #9333ea)",
+    dating_profile: {
+      username: "HeadacheHank_45",
+      age: 45, sex: "M",
+      tagline: "Worst headache of my life ⚡",
+      bio: "Walked in complaining of sudden-onset severe headache that started 1 hour ago. Says it's the worst headache he's ever had. No prior headache history.",
+      looking_for: "Something to stop this headache",
+      baggage: ["Sudden severe headache", "No significant PMH"],
+      icf_tags: ["b28010 Pain in head and neck", "b1400 Sustaining attention"]
+    },
+    level1_question: "I've got the worst headache of my life. Can you do anything for this?",
+    correct_swipe: "LEFT_911",
+    reveal: {
+      best_answer_rationale: "'Worst headache of my life' with sudden onset is a classic thunderclap headache presentation—a red flag for subarachnoid hemorrhage until proven otherwise. This is a 911 call, not a PT visit.",
+      key_red_flags: ["Thunderclap headache", "Sudden onset", "Worst ever", "No prior history"],
+      scope_boundary: "Medical Emergency"
+    },
+    scaffolding: {
+      level2: {
+        question: "I don't want to go to the ER. Can't you just do some neck work? It's probably tension. 😣",
+        options: [
+          { text: "Let me try some gentle cervical mobilizations and see if it helps.", correct: false, feedback: "ABSOLUTELY NOT. Manual therapy on a potential SAH could be catastrophic. This is an emergency." },
+          { text: "I understand you don't want to go, but a sudden 'worst headache ever' can be a sign of bleeding in the brain. I need to call 911 right now.", correct: true, feedback: "Correct. Be direct and call 911. Patient reluctance doesn't change the clinical urgency." },
+          { text: "Take some Tylenol and if it doesn't improve in an hour, go to the ER.", correct: false, feedback: "An hour delay with a potential SAH could mean death or permanent disability. Don't wait." },
+          { text: "Let me check your neck range of motion first.", correct: false, feedback: "Stop assessing and start acting. This isn't a differential diagnosis moment—it's a 'call 911' moment." }
+        ]
+      },
+      level3: {
+        update: "He's now complaining of neck stiffness and his speech is getting slurred. 🚑",
+        time_label: "10 Minutes Later",
+        options: [
+          { text: "Call 911 NOW if you haven't already. Keep him still, monitor consciousness, and prepare to report symptoms to EMS.", correct: true, feedback: "These are classic signs of SAH progression. Every second counts. You are potentially saving his life." },
+          { text: "Help him lie down and put ice on his neck.", correct: false, feedback: "Ice won't help intracranial bleeding. He needs neurosurgical intervention." },
+          { text: "Drive him to the nearest hospital yourself.", correct: false, feedback: "If he deteriorates en route, you can't provide the emergency care EMS can. Call 911." },
+          { text: "Maybe it's just a bad migraine with aura.", correct: false, feedback: "Neck stiffness + slurred speech + thunderclap headache = SAH until proven otherwise. Stop rationalizing and act." }
+        ]
+      }
+    }
+  },
+  {
+    id: "DA-008", category: "direct_access", difficulty: 3, setting: "Outpatient",
+    bg_gradient: "linear-gradient(135deg, #fcd34d, #b45309)",
+    dating_profile: {
+      username: "HipPain_Grandma72",
+      age: 72, sex: "F",
+      tagline: "Getting old isn't for the weak 👵",
+      bio: "Progressive right hip and groin pain over 4 months. Worse with weight bearing. Takes calcium and vitamin D. Recent fall 2 weeks ago but 'caught herself.'",
+      looking_for: "Help with walking and hip pain",
+      baggage: ["R hip/groin pain", "Osteoporosis", "Fall risk", "Calcium + Vit D"],
+      icf_tags: ["b28016 Pain in joints", "b710 Mobility of joint functions", "d450 Walking"]
+    },
+    level1_question: "My hip has been hurting for months and I almost fell last week. Can PT help?",
+    correct_swipe: "LEFT_REFER",
+    reveal: {
+      best_answer_rationale: "Progressive hip/groin pain in a 72yo with osteoporosis and a recent near-fall raises concern for occult hip fracture or avascular necrosis. Medical imaging is needed before PT intervention to rule out fracture.",
+      key_red_flags: ["Osteoporosis", "Age 72", "Progressive weight-bearing pain", "Recent fall", "Groin pain"],
+      scope_boundary: "Red Flag Screening - Possible Occult Fracture"
+    },
+    scaffolding: {
+      level2: {
+        question: "I caught myself though—I didn't actually fall. Can't we just start some exercises? 🙄",
+        options: [
+          { text: "Sure, since you didn't fall completely, let's start with some gentle hip strengthening.", correct: false, feedback: "Dangerous. Even a near-fall with osteoporosis can cause insufficiency fractures. Groin pain + weight-bearing pain = image first." },
+          { text: "Even catching yourself can stress osteoporotic bone. I want your doctor to get an X-ray of your hip before we start, just to be safe.", correct: true, feedback: "Smart clinical reasoning. Protecting the patient while explaining WHY builds trust and demonstrates competence." },
+          { text: "At your age, some hip pain is normal. Let's work on balance.", correct: false, feedback: "Ageist and dismissive. Progressive hip pain with these risk factors deserves proper workup." },
+          { text: "I'll have you do a single-leg stand test to check your balance.", correct: false, feedback: "If she has an occult fracture, loading that hip could displace it. Image first, test later." }
+        ]
+      },
+      level3: {
+        update: "X-ray was negative but her doctor ordered an MRI. It showed a stress fracture. She's been cleared for gentle PT after 4 weeks. 🦴",
+        time_label: "6 Weeks Later",
+        options: [
+          { text: "Great—now that we know what we're dealing with, let's start with non-weight-bearing hip mobility and progress based on pain and imaging.", correct: true, feedback: "Evidence-based progression. You protected the patient, got the right workup, and can now treat confidently." },
+          { text: "See, I should have just started treating her originally.", correct: false, feedback: "No! If you had loaded that hip with a stress fracture, you could have caused a displaced fracture requiring surgery." },
+          { text: "Let's jump right into weight-bearing exercises since she's been cleared.", correct: false, feedback: "She was cleared for 'gentle PT.' Progress gradually—the bone is healed but may not be fully remodeled." },
+          { text: "Start with aggressive stretching to regain her range of motion.", correct: false, feedback: "Post-stress-fracture rehab should prioritize gradual loading, not aggressive stretching." }
+        ]
+      }
+    }
+  },
+  {
+    id: "DA-009", category: "direct_access", difficulty: 2, setting: "Outpatient",
+    bg_gradient: "linear-gradient(135deg, #86efac, #16a34a)",
+    dating_profile: {
+      username: "TMJ_Teacher29",
+      age: 29, sex: "F",
+      tagline: "My jaw clicks and it's driving me crazy 😬",
+      bio: "Jaw clicking and pain started 2 months ago. Worse with eating and yawning. Clenches teeth at night. No locking.",
+      looking_for: "Make the clicking stop",
+      baggage: ["TMJ pain", "Bruxism", "No meds"],
+      icf_tags: ["b28010 Pain in head and neck", "b710 Mobility of joint functions", "d550 Eating"]
+    },
+    level1_question: "My jaw has been clicking and hurting. Do I need to see a dentist first or can you help?",
+    correct_swipe: "RIGHT_PT",
+    reveal: {
+      best_answer_rationale: "TMJ dysfunction with clicking and pain from bruxism is within PT scope of practice. PTs trained in TMJ can provide manual therapy, exercise, and behavioral modifications. No dental referral needed first for this presentation.",
+      key_red_flags: ["None"],
+      scope_boundary: "Appropriate Direct Access"
+    },
+    scaffolding: {
+      level2: {
+        question: "My dentist told me I need a $2000 mouth guard. Do I really need one before starting PT? 💸",
+        options: [
+          { text: "Yes, a night guard is essential. You should get one first.", correct: false, feedback: "While night guards can help, they're not prerequisite to PT. Many patients improve with PT alone." },
+          { text: "Night guards are useless. Save your money.", correct: false, feedback: "Night guards have evidence for bruxism management. Don't dismiss other providers' recommendations entirely." },
+          { text: "A night guard can help, but let's start PT now. We can address jaw mechanics and habits while you decide on the guard.", correct: true, feedback: "Collaborative approach. You respected the dentist's recommendation while not delaying treatment." },
+          { text: "That's between you and your dentist. I only do PT stuff.", correct: false, feedback: "TMJ care is inherently interdisciplinary. Collaborative communication is part of good direct access practice." }
+        ]
+      },
+      level3: {
+        update: "The clicking stopped! But now I'm getting ringing in my ears. Is that related? 🔔",
+        time_label: "3 Weeks Later",
+        options: [
+          { text: "Tinnitus can be associated with TMJ dysfunction due to the proximity of the TMJ to the ear. Let's address your lateral pterygoid and cervical spine.", correct: true, feedback: "Correct. TMJ-related tinnitus is well-documented. Continued TMJ treatment addressing muscular tension is appropriate." },
+          { text: "That's an ear problem. See an ENT.", correct: false, feedback: "While ENT referral may eventually be appropriate, TMJ-related tinnitus should be addressed in PT first given the clinical context." },
+          { text: "Ringing in the ears is outside PT scope.", correct: false, feedback: "When tinnitus is secondary to TMJ dysfunction you're already treating, addressing the cause IS your scope." },
+          { text: "That's probably just stress. Don't worry about it.", correct: false, feedback: "New symptoms deserve investigation, not dismissal. Clinical reasoning should connect this to her existing TMJ presentation." }
+        ]
+      }
+    }
+  },
+  {
+    id: "DA-010", category: "direct_access", difficulty: 4, setting: "Outpatient",
+    bg_gradient: "linear-gradient(135deg, #f9a8d4, #db2777)",
+    dating_profile: {
+      username: "LegSwelling_Dan50",
+      age: 50, sex: "M",
+      tagline: "My calf is really swollen 🦵",
+      bio: "Flew back from a 12-hour international flight 3 days ago. Right calf is swollen, warm to touch, and painful. No trauma.",
+      looking_for: "Just want the swelling to go down",
+      baggage: ["Unilateral calf swelling", "Recent long-haul flight", "Sedentary"],
+      icf_tags: ["b28015 Pain in lower limb", "b4152 Functions of veins", "b435 Immunological system functions"]
+    },
+    level1_question: "My calf has been swollen since my flight. Figured I should come see PT for some massage or compression.",
+    correct_swipe: "LEFT_REFER",
+    reveal: {
+      best_answer_rationale: "Unilateral calf swelling + warmth + pain + recent long-haul flight = DVT until proven otherwise. Massage or compression on a DVT can dislodge the clot causing a pulmonary embolism. Refer for urgent medical evaluation.",
+      key_red_flags: ["Unilateral swelling", "Warmth", "Recent prolonged immobility", "Calf pain"],
+      scope_boundary: "Medical Emergency Screening - Possible DVT"
+    },
+    scaffolding: {
+      level2: {
+        question: "I think it's just from sitting too long. Can't you just massage it out? 💆",
+        options: [
+          { text: "Sure, deep tissue massage should help move the fluid.", correct: false, feedback: "NEVER massage a suspected DVT. You could dislodge a clot and cause a pulmonary embolism. This could kill him." },
+          { text: "Let me apply some compression and elevate the leg.", correct: false, feedback: "Compression on a DVT can also dislodge a clot. Do not treat—refer." },
+          { text: "With the swelling, warmth, and your recent flight, I need you to see a doctor TODAY to rule out a blood clot. This is not safe for me to treat until we know.", correct: true, feedback: "Exactly right. Clear, urgent communication. Direct access means knowing when to send patients OUT." },
+          { text: "Try some calf stretches and come back if it doesn't improve.", correct: false, feedback: "Stretching a leg with a potential DVT is dangerous. This patient needs medical evaluation immediately." }
+        ]
+      },
+      level3: {
+        update: "He went to urgent care. They confirmed a DVT with ultrasound. He's on blood thinners now and was told PT can help later. 💊",
+        time_label: "3 Weeks Later",
+        options: [
+          { text: "Now that he's anticoagulated, we can start gentle exercise. Walking programs and gradual return to activity with monitoring for PE symptoms.", correct: true, feedback: "Current evidence supports early mobilization with anticoagulation. Monitor for SOB, chest pain, or hemoptysis." },
+          { text: "He should avoid all exercise until the clot fully resolves.", correct: false, feedback: "Prolonged immobility actually increases DVT risk. Early mobilization with anticoagulation is evidence-based." },
+          { text: "Start with deep tissue massage now that he's on blood thinners.", correct: false, feedback: "Deep tissue work on a recent DVT site is still risky, even with anticoagulation. Gentle activity, not aggressive manual therapy." },
+          { text: "Let's do aggressive calf strengthening to prevent another clot.", correct: false, feedback: "Gradual progression is key. Aggressive loading on a recently affected limb isn't appropriate yet." }
+        ]
+      }
+    }
   }
 ];
 
 export const SCORING = {
   "NUTR-001": 40, "NUTR-002": 45, "NUTR-003": 75, "NUTR-004": 80,
   "NUTR-005": 60, "NUTR-006": 40, "NUTR-007": 50, "NUTR-008": 45,
-  "NUTR-009": 80, "NUTR-010": 55, "NUTR-011": 50, "NUTR-012": 60
+  "NUTR-009": 80, "NUTR-010": 55, "NUTR-011": 50, "NUTR-012": 60,
+  "DA-001": 40, "DA-002": 40, "DA-003": 75, "DA-004": 45,
+  "DA-005": 70, "DA-006": 40, "DA-007": 80, "DA-008": 65,
+  "DA-009": 50, "DA-010": 75
 };
 
 export const LEVELS = [
   { level: 1, name: "Triage Mode", description: "Identify if nutrition is in Scope or requires Referral." },
   { level: 2, name: "Patient Dialogue", description: "Handle tough patient questions without overstepping." },
   { level: 3, name: "Clinical Mgmt", description: "Manage evolving symptoms and complex scenarios." }
+];
+
+export const GAME_MODES = [
+  { id: "nutrition", name: "Nutrition Scope", description: "Is this nutrition advice in PT scope or time to refer?", icon: "🥗" },
+  { id: "direct_access", name: "Direct Access", description: "Can you treat this patient directly or do they need a physician first?", icon: "🚪" }
 ];
